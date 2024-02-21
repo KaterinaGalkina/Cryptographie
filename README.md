@@ -8,6 +8,8 @@ Une fois cela fait, double-cliquez sur le fichier "index.html" et sélectionnez 
 
 Juste après, une fenêtre s'ouvrira dans votre navigateur avec la page d'accueil.
 
+C'est un projet individuel réalisé en 2022.
+
 ## Concernant le site
 
 Dès que vous accédez au site, vous atterrissez sur la page d'accueil où vous devrez saisir un mot de passe. Ce mot de passe est requis pour accéder à des informations hautement confidentielles destinées aux espions. Cependant, aujourd'hui, je vais faire une exception et le partager avec vous. Saisissez "G568GVGWHJ8" (ou simplement "Katia") dans le champ prévu à cet effet, puis appuyez sur "Valider".
