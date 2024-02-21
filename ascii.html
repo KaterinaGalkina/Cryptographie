@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Le Meilleur site du monde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/ascii.js" defer></script>
+  </head>
+  
+  <body>
+    <button onclick="topFunction()" id="but_haut" title="Appuiez pour remonter en haut de la page">En haut</button>
+    
+    <header>
+      <nav>
+        <ul class="barre_de_nav">
+          <li><a><img src="assets/images/logo.png" width="29%"></a></li>
+          <li><a href="home.html">Presentation</a></li>
+          <li><a href="cesar.html">César</a></li>
+          <li><a href="vigenere.html">Vigenère</a></li>              
+          <li><a href="beaufort.html">Beaufort</a></li>
+          <li><a href="xor.html">XOR</a></li>
+          <li><a href="ascii.html">ASCII</a></li>
+        </ul>
+      </nav>
+    </header> 
+    <div class="ccc"> 
+      <h2>ASCII - American Standard Code for Information Interchange</h2>
+      <p>L'American Standard Code for Information Interchange (Code américain normalisé pour l'échange d'information), plus connu sous l'acronyme ASCII, est une norme informatique de codage de caractères apparue dans les années 1960. C'est la norme de codage de caractères la plus influente à ce jour. ASCII définit 128 codes à 7 bits, comprenant 95 caractères imprimables : les chiffres arabes de 0 à 9, les 26 lettres de l'alphabet latin en minuscules et en capitales, et des symboles mathématiques et de ponctuation. ASCII suffit pour représenter les textes en anglais, mais il est trop limité pour les autres langues, dont le français et ses lettres accentuées.</p>
+      <p>Ci-dessous, vous pouvez cliquer sur la valeur, dont votre message est chiffré :</p>
+      <nav class="menu">
+        <ul>
+          <li><a href="#Bin">Binaire</a></li>
+          <li><a href="#Oct">Octal</a></li>
+          <li><a href="#Dec">Decimal</a></li>
+          <li><a href="#Hex">Hexadecimal</a></li>
+          <li><a href="#Char">Chaine de caractères</a></li>
+        </ul>
+      </nav>
+      <h2>L'histoire d'ASCII</h2>
+      <p>Avant la standardisation, de nombreux codages de caractères incompatibles entre eux existaient. Chaque matériel avait son propre codage, lié aux techniques qu'il utilisait. Tout ordinateur, comme l'IBM 1130, était livré avec ses sous-programmes et ses tables permettant de transposer les codes d'un matériel à un autre. D'autres standards, comme l'EBCDIC d'IBM, étaient utilisés, notamment pour les cartes perforées (Bull avait un code, incompatible avec EBCDIC).</p>
+      <p>En 1960, l'ISO a créé le Technical Committee on Computers and Information Processing (Comité technique pour les ordinateurs et le traitement de l'information). Il a été divisé en six groupes de travail :</p>
+      <ul>
+        <li>Working Group A : Glossary ;</li>
+        <li>Working Group B : Character Sets and Coding ;</li>
+        <li>Working Group C : Character Recognition ;</li>
+        <li>Working Group D : Input and Output Media ;</li>
+        <li>Working Group E : Programming Languages ;</li>
+        <li>Working Group F : Digital Data Transmission.</li>
+      </ul>
+      <p>L'American Standards Association (ASA, aujourd'hui ANSI) était chargée du standard des États-Unis. L'ASA a reconnu le consortium Business Equipment Manufacturers Association (BEMA, puis, CBEMA) comme le parrain du travail de standardisation du traitement des données. En 1960, BEMA a formé un groupe de traitement des données des partenaires, dont Minneapolis-Honeywell. Ce groupe a formé un Plans and Policies Committee, qui à son tour a formé l'Engineering Committee. L'Engineering Committee a formé le comité X3, qui a été reconnu par l'ASA comme Sectional Committee. Parmi les membres du comité, Bob Bemer est parfois présenté comme père de l'ASCII, ce qu'il ne faut pas comprendre comme inventeur de l'ASCII, mais comme grand artisan de la diffusion d'ASCII.</p>
+      <p>En 1961, le DoD met au point un code standard de transmission de donnée sur 8 bits. Ce standard 8 bits est une variante des standards FIELDATA sixbits utilisés dans la décennie précédente par la défense. Il a eu une influence notable sur la première version de l'ASCII. En 1963, la première version publiée de l'ASCII apparaît. La liste des caractères à considérer et leur position ont été débattues.</p>
+      <p>Sa dernière version stabilisée a été normalisée par l'ANSI en 1986 sous la désignation ANSI X3.4:1986 (après deux autres versions en 1967 et 1968, historiquement normalisées par l'ASI, devenu ANSI mais qui ne normalisait pas encore toutes les positions). C'est également la variante américaine des jeux de caractères codés selon la norme ISO/CEI 646 avec laquelle on la confond souvent (d'où sa désignation également comme US-ASCII pour lever l'ambigüité, désignation préférée dans le registre IANA des jeux de caractères codés).
+À l'époque elle a été en concurrence avec des standards incompatibles. Par la suite, l'existence de nombreux codages reprenant les conventions de l'ASCII l'a rendu très populaire. IBM, qui utilisait sur ses mainframes un autre codage, l'EBCDIC, ne commença à utiliser officiellement l'ASCII sur ses matériels qu'avec l'IBM PC, en 1981.</p>
+      <h2>Sa représentation</h2>
+      <p>Veuillez retrouver ci-dessous le tableau ASCII:</p>
+      <div class="mettre_en_ligne">
+        <table>
+          <tr>
+            <th class='tab_ascii'>Binaire</th>
+            <th class='tab_ascii'>Decimal</th>
+            <th class='tab_ascii'>Octal</th>
+            <th class='tab_ascii'>Hexadecimal</th>
+            <th class='tab_ascii'>Caractères</th>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>0</td>
+           <td class='tab_ascii'>0</td>
+           <td class='tab_ascii'>0</td>
+           <td class='tab_ascii'>0</td>
+           <td class='tab_ascii'>NUL</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1</td>
+           <td class='tab_ascii'>1</td>
+           <td class='tab_ascii'>1</td>
+           <td class='tab_ascii'>1</td>
+           <td class='tab_ascii'>SOH</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10</td>
+           <td class='tab_ascii'>2</td>
+           <td class='tab_ascii'>2</td>
+           <td class='tab_ascii'>2</td>
+           <td class='tab_ascii'>STX</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11</td>
+           <td class='tab_ascii'>3</td>
+           <td class='tab_ascii'>3</td>
+           <td class='tab_ascii'>3</td>
+           <td class='tab_ascii'>ETX</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100</td>
+           <td class='tab_ascii'>4</td>
+           <td class='tab_ascii'>4</td>
+           <td class='tab_ascii'>4</td>
+           <td class='tab_ascii'>EOT</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101</td>
+           <td class='tab_ascii'>5</td>
+           <td class='tab_ascii'>5</td>
+           <td class='tab_ascii'>5</td>
+           <td class='tab_ascii'>ENQ</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110</td>
+           <td class='tab_ascii'>6</td>
+           <td class='tab_ascii'>6</td>
+           <td class='tab_ascii'>6</td>
+           <td class='tab_ascii'>ACK</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111</td>
+           <td class='tab_ascii'>7</td>
+           <td class='tab_ascii'>7</td>
+           <td class='tab_ascii'>7</td>
+           <td class='tab_ascii'>BEL</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000</td>
+           <td class='tab_ascii'>8</td>
+           <td class='tab_ascii'>10</td>
+           <td class='tab_ascii'>8</td>
+           <td class='tab_ascii'>BS</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001</td>
+           <td class='tab_ascii'>9</td>
+           <td class='tab_ascii'>11</td>
+           <td class='tab_ascii'>9</td>
+           <td class='tab_ascii'>HT</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010</td>
+           <td class='tab_ascii'>10</td>
+           <td class='tab_ascii'>12</td>
+           <td class='tab_ascii'>A</td>
+           <td class='tab_ascii'>LF</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011</td>
+           <td class='tab_ascii'>11</td>
+           <td class='tab_ascii'>13</td>
+           <td class='tab_ascii'>B</td>
+           <td class='tab_ascii'>VT</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100</td>
+           <td class='tab_ascii'>12</td>
+           <td class='tab_ascii'>14</td>
+           <td class='tab_ascii'>C</td>
+           <td class='tab_ascii'>FF</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101</td>
+           <td class='tab_ascii'>13</td>
+           <td class='tab_ascii'>15</td>
+           <td class='tab_ascii'>D</td>
+           <td class='tab_ascii'>CR</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110</td>
+           <td class='tab_ascii'>14</td>
+           <td class='tab_ascii'>16</td>
+           <td class='tab_ascii'>E</td>
+           <td class='tab_ascii'>SO</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111</td>
+           <td class='tab_ascii'>15</td>
+           <td class='tab_ascii'>17</td>
+           <td class='tab_ascii'>F</td>
+           <td class='tab_ascii'>SI</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10000</td>
+           <td class='tab_ascii'>16</td>
+           <td class='tab_ascii'>20</td>
+           <td class='tab_ascii'>10</td>
+           <td class='tab_ascii'>DLE</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10001</td>
+           <td class='tab_ascii'>17</td>
+           <td class='tab_ascii'>21</td>
+           <td class='tab_ascii'>11</td>
+           <td class='tab_ascii'>DC1</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10010</td>
+           <td class='tab_ascii'>18</td>
+           <td class='tab_ascii'>22</td>
+           <td class='tab_ascii'>12</td>
+           <td class='tab_ascii'>DC2</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10011</td>
+           <td class='tab_ascii'>19</td>
+           <td class='tab_ascii'>23</td>
+           <td class='tab_ascii'>13</td>
+           <td class='tab_ascii'>DC3</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10100</td>
+           <td class='tab_ascii'>20</td>
+           <td class='tab_ascii'>24</td>
+           <td class='tab_ascii'>14</td>
+           <td class='tab_ascii'>DC4</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10101</td>
+           <td class='tab_ascii'>21</td>
+           <td class='tab_ascii'>25</td>
+           <td class='tab_ascii'>15</td>
+           <td class='tab_ascii'>NAK</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10110</td>
+           <td class='tab_ascii'>22</td>
+           <td class='tab_ascii'>26</td>
+           <td class='tab_ascii'>16</td>
+           <td class='tab_ascii'>SYN</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>10111</td>
+           <td class='tab_ascii'>23</td>
+           <td class='tab_ascii'>27</td>
+           <td class='tab_ascii'>17</td>
+           <td class='tab_ascii'>ETB</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11000</td>
+           <td class='tab_ascii'>24</td>
+           <td class='tab_ascii'>30</td>
+           <td class='tab_ascii'>18</td>
+           <td class='tab_ascii'>CAN</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11001</td>
+           <td class='tab_ascii'>25</td>
+           <td class='tab_ascii'>31</td>
+           <td class='tab_ascii'>19</td>
+           <td class='tab_ascii'>EM</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11010</td>
+           <td class='tab_ascii'>26</td>
+           <td class='tab_ascii'>32</td>
+           <td class='tab_ascii'>1A</td>
+           <td class='tab_ascii'>SUB</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11011</td>
+           <td class='tab_ascii'>27</td>
+           <td class='tab_ascii'>33</td>
+           <td class='tab_ascii'>1B</td>
+           <td class='tab_ascii'>ESC</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11100</td>
+           <td class='tab_ascii'>28</td>
+           <td class='tab_ascii'>34</td>
+           <td class='tab_ascii'>1C</td>
+           <td class='tab_ascii'>FS</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11101</td>
+           <td class='tab_ascii'>29</td>
+           <td class='tab_ascii'>35</td>
+           <td class='tab_ascii'>1D</td>
+           <td class='tab_ascii'>GS</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11110</td>
+           <td class='tab_ascii'>30</td>
+           <td class='tab_ascii'>36</td>
+           <td class='tab_ascii'>1E</td>
+           <td class='tab_ascii'>RS</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>11111</td>
+           <td class='tab_ascii'>31</td>
+           <td class='tab_ascii'>37</td>
+           <td class='tab_ascii'>1F</td>
+           <td class='tab_ascii'>US</td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th class='tab_ascii'>Binaire</th>
+            <th class='tab_ascii'>Decimal</th>
+            <th class='tab_ascii'>Octal</th>
+            <th class='tab_ascii'>Hexadecimal</th>
+            <th class='tab_ascii'>Caractères</th>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100000</td>
+           <td class='tab_ascii'>32</td>
+           <td class='tab_ascii'>40</td>
+           <td class='tab_ascii'>20</td>
+           <td class='tab_ascii'>Space</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100001</td>
+           <td class='tab_ascii'>33</td>
+           <td class='tab_ascii'>41</td>
+           <td class='tab_ascii'>21</td>
+           <td class='tab_ascii'>!</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100010</td>
+           <td class='tab_ascii'>34</td>
+           <td class='tab_ascii'>42</td>
+           <td class='tab_ascii'>22</td>
+           <td class='tab_ascii'>"</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100011</td>
+           <td class='tab_ascii'>35</td>
+           <td class='tab_ascii'>43</td>
+           <td class='tab_ascii'>23</td>
+           <td class='tab_ascii'>#</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100100</td>
+           <td class='tab_ascii'>36</td>
+           <td class='tab_ascii'>44</td>
+           <td class='tab_ascii'>24</td>
+           <td class='tab_ascii'>$</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100101</td>
+           <td class='tab_ascii'>37</td>
+           <td class='tab_ascii'>45</td>
+           <td class='tab_ascii'>25</td>
+           <td class='tab_ascii'>%</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100110</td>
+           <td class='tab_ascii'>38</td>
+           <td class='tab_ascii'>46</td>
+           <td class='tab_ascii'>26</td>
+           <td class='tab_ascii'>&</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>100111</td>
+           <td class='tab_ascii'>39</td>
+           <td class='tab_ascii'>47</td>
+           <td class='tab_ascii'>27</td>
+           <td class='tab_ascii'>'</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101000</td>
+           <td class='tab_ascii'>40</td>
+           <td class='tab_ascii'>50</td>
+           <td class='tab_ascii'>28</td>
+           <td class='tab_ascii'>(</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101001</td>
+           <td class='tab_ascii'>41</td>
+           <td class='tab_ascii'>51</td>
+           <td class='tab_ascii'>29</td>
+           <td class='tab_ascii'>)</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101010</td>
+           <td class='tab_ascii'>42</td>
+           <td class='tab_ascii'>52</td>
+           <td class='tab_ascii'>2A</td>
+           <td class='tab_ascii'>*</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101011</td>
+           <td class='tab_ascii'>43</td>
+           <td class='tab_ascii'>53</td>
+           <td class='tab_ascii'>2B</td>
+           <td class='tab_ascii'>+</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101100</td>
+           <td class='tab_ascii'>44</td>
+           <td class='tab_ascii'>54</td>
+           <td class='tab_ascii'>2C</td>
+           <td class='tab_ascii'>,</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101101</td>
+           <td class='tab_ascii'>45</td>
+           <td class='tab_ascii'>55</td>
+           <td class='tab_ascii'>2D</td>
+           <td class='tab_ascii'>-</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101110</td>
+           <td class='tab_ascii'>46</td>
+           <td class='tab_ascii'>56</td>
+           <td class='tab_ascii'>2E</td>
+           <td class='tab_ascii'>.</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>101111</td>
+           <td class='tab_ascii'>47</td>
+           <td class='tab_ascii'>57</td>
+           <td class='tab_ascii'>2F</td>
+           <td class='tab_ascii'>/</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110000</td>
+           <td class='tab_ascii'>48</td>
+           <td class='tab_ascii'>60</td>
+           <td class='tab_ascii'>30</td>
+           <td class='tab_ascii'>0</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110001</td>
+           <td class='tab_ascii'>49</td>
+           <td class='tab_ascii'>61</td>
+           <td class='tab_ascii'>31</td>
+           <td class='tab_ascii'>1</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110010</td>
+           <td class='tab_ascii'>50</td>
+           <td class='tab_ascii'>62</td>
+           <td class='tab_ascii'>32</td>
+           <td class='tab_ascii'>2</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110011</td>
+           <td class='tab_ascii'>51</td>
+           <td class='tab_ascii'>63</td>
+           <td class='tab_ascii'>33</td>
+           <td class='tab_ascii'>3</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110100</td>
+           <td class='tab_ascii'>52</td>
+           <td class='tab_ascii'>64</td>
+           <td class='tab_ascii'>34</td>
+           <td class='tab_ascii'>4</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110101</td>
+           <td class='tab_ascii'>53</td>
+           <td class='tab_ascii'>65</td>
+           <td class='tab_ascii'>35</td>
+           <td class='tab_ascii'>5</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110110</td>
+           <td class='tab_ascii'>54</td>
+           <td class='tab_ascii'>66</td>
+           <td class='tab_ascii'>36</td>
+           <td class='tab_ascii'>6</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>110111</td>
+           <td class='tab_ascii'>55</td>
+           <td class='tab_ascii'>67</td>
+           <td class='tab_ascii'>37</td>
+           <td class='tab_ascii'>7</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111000</td>
+           <td class='tab_ascii'>56</td>
+           <td class='tab_ascii'>70</td>
+           <td class='tab_ascii'>38</td>
+           <td class='tab_ascii'>8</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111001</td>
+           <td class='tab_ascii'>57</td>
+           <td class='tab_ascii'>71</td>
+           <td class='tab_ascii'>39</td>
+           <td class='tab_ascii'>9</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111010</td>
+           <td class='tab_ascii'>58</td>
+           <td class='tab_ascii'>72</td>
+           <td class='tab_ascii'>3A</td>
+           <td class='tab_ascii'>:</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111011</td>
+           <td class='tab_ascii'>59</td>
+           <td class='tab_ascii'>73</td>
+           <td class='tab_ascii'>3B</td>
+           <td class='tab_ascii'>;</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111100</td>
+           <td class='tab_ascii'>60</td>
+           <td class='tab_ascii'>74</td>
+           <td class='tab_ascii'>3C</td>
+           <td class='tab_ascii'><</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111101</td>
+           <td class='tab_ascii'>61</td>
+           <td class='tab_ascii'>75</td>
+           <td class='tab_ascii'>3D</td>
+           <td class='tab_ascii'>=</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111110</td>
+           <td class='tab_ascii'>62</td>
+           <td class='tab_ascii'>76</td>
+           <td class='tab_ascii'>3E</td>
+           <td class='tab_ascii'>></td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>111111</td>
+           <td class='tab_ascii'>63</td>
+           <td class='tab_ascii'>77</td>
+           <td class='tab_ascii'>3F</td>
+           <td class='tab_ascii'>?</td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th class='tab_ascii'>Binaire</th>
+            <th class='tab_ascii'>Decimal</th>
+            <th class='tab_ascii'>Octal</th>
+            <th class='tab_ascii'>Hexadecimal</th>
+            <th class='tab_ascii'>Caractères</th>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000000</td>
+           <td class='tab_ascii'>64</td>
+           <td class='tab_ascii'>100</td>
+           <td class='tab_ascii'>40</td>
+           <td class='tab_ascii'>@</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000001</td>
+           <td class='tab_ascii'>65</td>
+           <td class='tab_ascii'>101</td>
+           <td class='tab_ascii'>41</td>
+           <td class='tab_ascii'>A</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000010</td>
+           <td class='tab_ascii'>66</td>
+           <td class='tab_ascii'>102</td>
+           <td class='tab_ascii'>42</td>
+           <td class='tab_ascii'>B</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000011</td>
+           <td class='tab_ascii'>67</td>
+           <td class='tab_ascii'>103</td>
+           <td class='tab_ascii'>43</td>
+           <td class='tab_ascii'>C</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000100</td>
+           <td class='tab_ascii'>68</td>
+           <td class='tab_ascii'>104</td>
+           <td class='tab_ascii'>44</td>
+           <td class='tab_ascii'>D</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000101</td>
+           <td class='tab_ascii'>69</td>
+           <td class='tab_ascii'>105</td>
+           <td class='tab_ascii'>45</td>
+           <td class='tab_ascii'>E</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000110</td>
+           <td class='tab_ascii'>70</td>
+           <td class='tab_ascii'>106</td>
+           <td class='tab_ascii'>46</td>
+           <td class='tab_ascii'>F</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1000111</td>
+           <td class='tab_ascii'>71</td>
+           <td class='tab_ascii'>107</td>
+           <td class='tab_ascii'>47</td>
+           <td class='tab_ascii'>G</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001000</td>
+           <td class='tab_ascii'>72</td>
+           <td class='tab_ascii'>110</td>
+           <td class='tab_ascii'>48</td>
+           <td class='tab_ascii'>H</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001001</td>
+           <td class='tab_ascii'>73</td>
+           <td class='tab_ascii'>111</td>
+           <td class='tab_ascii'>49</td>
+           <td class='tab_ascii'>I</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001010</td>
+           <td class='tab_ascii'>74</td>
+           <td class='tab_ascii'>112</td>
+           <td class='tab_ascii'>4A</td>
+           <td class='tab_ascii'>J</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001011</td>
+           <td class='tab_ascii'>75</td>
+           <td class='tab_ascii'>113</td>
+           <td class='tab_ascii'>4B</td>
+           <td class='tab_ascii'>K</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001100</td>
+           <td class='tab_ascii'>76</td>
+           <td class='tab_ascii'>114</td>
+           <td class='tab_ascii'>4C</td>
+           <td class='tab_ascii'>L</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001101</td>
+           <td class='tab_ascii'>77</td>
+           <td class='tab_ascii'>115</td>
+           <td class='tab_ascii'>4D</td>
+           <td class='tab_ascii'>M</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001110</td>
+           <td class='tab_ascii'>78</td>
+           <td class='tab_ascii'>116</td>
+           <td class='tab_ascii'>4E</td>
+           <td class='tab_ascii'>N</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1001111</td>
+           <td class='tab_ascii'>79</td>
+           <td class='tab_ascii'>117</td>
+           <td class='tab_ascii'>4F</td>
+           <td class='tab_ascii'>O</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010000</td>
+           <td class='tab_ascii'>80</td>
+           <td class='tab_ascii'>120</td>
+           <td class='tab_ascii'>50</td>
+           <td class='tab_ascii'>P</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010001</td>
+           <td class='tab_ascii'>81</td>
+           <td class='tab_ascii'>121</td>
+           <td class='tab_ascii'>51</td>
+           <td class='tab_ascii'>Q</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010010</td>
+           <td class='tab_ascii'>82</td>
+           <td class='tab_ascii'>122</td>
+           <td class='tab_ascii'>52</td>
+           <td class='tab_ascii'>R</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010011</td>
+           <td class='tab_ascii'>83</td>
+           <td class='tab_ascii'>123</td>
+           <td class='tab_ascii'>53</td>
+           <td class='tab_ascii'>S</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010100</td>
+           <td class='tab_ascii'>84</td>
+           <td class='tab_ascii'>124</td>
+           <td class='tab_ascii'>54</td>
+           <td class='tab_ascii'>T</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010101</td>
+           <td class='tab_ascii'>85</td>
+           <td class='tab_ascii'>125</td>
+           <td class='tab_ascii'>55</td>
+           <td class='tab_ascii'>U</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010110</td>
+           <td class='tab_ascii'>86</td>
+           <td class='tab_ascii'>126</td>
+           <td class='tab_ascii'>56</td>
+           <td class='tab_ascii'>V</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1010111</td>
+           <td class='tab_ascii'>87</td>
+           <td class='tab_ascii'>127</td>
+           <td class='tab_ascii'>57</td>
+           <td class='tab_ascii'>W</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011000</td>
+           <td class='tab_ascii'>88</td>
+           <td class='tab_ascii'>130</td>
+           <td class='tab_ascii'>58</td>
+           <td class='tab_ascii'>X</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011001</td>
+           <td class='tab_ascii'>89</td>
+           <td class='tab_ascii'>131</td>
+           <td class='tab_ascii'>59</td>
+           <td class='tab_ascii'>Y</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011010</td>
+           <td class='tab_ascii'>90</td>
+           <td class='tab_ascii'>132</td>
+           <td class='tab_ascii'>5A</td>
+           <td class='tab_ascii'>Z</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011011</td>
+           <td class='tab_ascii'>91</td>
+           <td class='tab_ascii'>133</td>
+           <td class='tab_ascii'>5B</td>
+           <td class='tab_ascii'>[</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011100</td>
+           <td class='tab_ascii'>92</td>
+           <td class='tab_ascii'>134</td>
+           <td class='tab_ascii'>5C</td>
+           <td class='tab_ascii'>\</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011101</td>
+           <td class='tab_ascii'>93</td>
+           <td class='tab_ascii'>135</td>
+           <td class='tab_ascii'>5D</td>
+           <td class='tab_ascii'>]</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011110</td>
+           <td class='tab_ascii'>94</td>
+           <td class='tab_ascii'>136</td>
+           <td class='tab_ascii'>5E</td>
+           <td class='tab_ascii'>^</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1011111</td>
+           <td class='tab_ascii'>95</td>
+           <td class='tab_ascii'>137</td>
+           <td class='tab_ascii'>5F</td>
+           <td class='tab_ascii'>_</td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <th class='tab_ascii'>Binaire</th>
+            <th class='tab_ascii'>Decimal</th>
+            <th class='tab_ascii'>Octal</th>
+            <th class='tab_ascii'>Hexadecimal</th>
+            <th class='tab_ascii'>Caractères</th>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100000</td>
+           <td class='tab_ascii'>96</td>
+           <td class='tab_ascii'>140</td>
+           <td class='tab_ascii'>60</td>
+           <td class='tab_ascii'>`</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100001</td>
+           <td class='tab_ascii'>97</td>
+           <td class='tab_ascii'>141</td>
+           <td class='tab_ascii'>61</td>
+           <td class='tab_ascii'>a</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100010</td>
+           <td class='tab_ascii'>98</td>
+           <td class='tab_ascii'>142</td>
+           <td class='tab_ascii'>62</td>
+           <td class='tab_ascii'>b</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100011</td>
+           <td class='tab_ascii'>99</td>
+           <td class='tab_ascii'>143</td>
+           <td class='tab_ascii'>63</td>
+           <td class='tab_ascii'>c</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100100</td>
+           <td class='tab_ascii'>100</td>
+           <td class='tab_ascii'>144</td>
+           <td class='tab_ascii'>64</td>
+           <td class='tab_ascii'>d</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100101</td>
+           <td class='tab_ascii'>101</td>
+           <td class='tab_ascii'>145</td>
+           <td class='tab_ascii'>65</td>
+           <td class='tab_ascii'>e</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100110</td>
+           <td class='tab_ascii'>102</td>
+           <td class='tab_ascii'>146</td>
+           <td class='tab_ascii'>66</td>
+           <td class='tab_ascii'>f</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1100111</td>
+           <td class='tab_ascii'>103</td>
+           <td class='tab_ascii'>147</td>
+           <td class='tab_ascii'>67</td>
+           <td class='tab_ascii'>g</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101000</td>
+           <td class='tab_ascii'>104</td>
+           <td class='tab_ascii'>150</td>
+           <td class='tab_ascii'>68</td>
+           <td class='tab_ascii'>h</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101001</td>
+           <td class='tab_ascii'>105</td>
+           <td class='tab_ascii'>151</td>
+           <td class='tab_ascii'>69</td>
+           <td class='tab_ascii'>i</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101010</td>
+           <td class='tab_ascii'>106</td>
+           <td class='tab_ascii'>152</td>
+           <td class='tab_ascii'>6A</td>
+           <td class='tab_ascii'>j</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101011</td>
+           <td class='tab_ascii'>107</td>
+           <td class='tab_ascii'>153</td>
+           <td class='tab_ascii'>6B</td>
+           <td class='tab_ascii'>k</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101100</td>
+           <td class='tab_ascii'>108</td>
+           <td class='tab_ascii'>154</td>
+           <td class='tab_ascii'>6C</td>
+           <td class='tab_ascii'>l</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101101</td>
+           <td class='tab_ascii'>109</td>
+           <td class='tab_ascii'>155</td>
+           <td class='tab_ascii'>6D</td>
+           <td class='tab_ascii'>m</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101110</td>
+           <td class='tab_ascii'>110</td>
+           <td class='tab_ascii'>156</td>
+           <td class='tab_ascii'>6E</td>
+           <td class='tab_ascii'>n</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1101111</td>
+           <td class='tab_ascii'>111</td>
+           <td class='tab_ascii'>157</td>
+           <td class='tab_ascii'>6F</td>
+           <td class='tab_ascii'>o</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110000</td>
+           <td class='tab_ascii'>112</td>
+           <td class='tab_ascii'>160</td>
+           <td class='tab_ascii'>70</td>
+           <td class='tab_ascii'>p</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110001</td>
+           <td class='tab_ascii'>113</td>
+           <td class='tab_ascii'>161</td>
+           <td class='tab_ascii'>71</td>
+           <td class='tab_ascii'>q</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110010</td>
+           <td class='tab_ascii'>114</td>
+           <td class='tab_ascii'>162</td>
+           <td class='tab_ascii'>72</td>
+           <td class='tab_ascii'>r</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110011</td>
+           <td class='tab_ascii'>115</td>
+           <td class='tab_ascii'>163</td>
+           <td class='tab_ascii'>73</td>
+           <td class='tab_ascii'>s</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110100</td>
+           <td class='tab_ascii'>116</td>
+           <td class='tab_ascii'>164</td>
+           <td class='tab_ascii'>74</td>
+           <td class='tab_ascii'>t</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110101</td>
+           <td class='tab_ascii'>117</td>
+           <td class='tab_ascii'>165</td>
+           <td class='tab_ascii'>75</td>
+           <td class='tab_ascii'>u</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110110</td>
+           <td class='tab_ascii'>118</td>
+           <td class='tab_ascii'>166</td>
+           <td class='tab_ascii'>76</td>
+           <td class='tab_ascii'>v</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1110111</td>
+           <td class='tab_ascii'>119</td>
+           <td class='tab_ascii'>167</td>
+           <td class='tab_ascii'>77</td>
+           <td class='tab_ascii'>w</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111000</td>
+           <td class='tab_ascii'>120</td>
+           <td class='tab_ascii'>170</td>
+           <td class='tab_ascii'>78</td>
+           <td class='tab_ascii'>x</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111001</td>
+           <td class='tab_ascii'>121</td>
+           <td class='tab_ascii'>171</td>
+           <td class='tab_ascii'>79</td>
+           <td class='tab_ascii'>y</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111010</td>
+           <td class='tab_ascii'>122</td>
+           <td class='tab_ascii'>172</td>
+           <td class='tab_ascii'>7A</td>
+           <td class='tab_ascii'>z</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111011</td>
+           <td class='tab_ascii'>123</td>
+           <td class='tab_ascii'>173</td>
+           <td class='tab_ascii'>7B</td>
+           <td class='tab_ascii'>{</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111100</td>
+           <td class='tab_ascii'>124</td>
+           <td class='tab_ascii'>174</td>
+           <td class='tab_ascii'>7C</td>
+           <td class='tab_ascii'>|</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111101</td>
+           <td class='tab_ascii'>125</td>
+           <td class='tab_ascii'>175</td>
+           <td class='tab_ascii'>7D</td>
+           <td class='tab_ascii'>}</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111110</td>
+           <td class='tab_ascii'>126</td>
+           <td class='tab_ascii'>176</td>
+           <td class='tab_ascii'>7E</td>
+           <td class='tab_ascii'>~</td>
+          </tr>
+          <tr>
+           <td class='tab_ascii'>1111111</td>
+           <td class='tab_ascii'>127</td>
+           <td class='tab_ascii'>177</td>
+           <td class='tab_ascii'>7F</td>
+           <td class='tab_ascii'>DEL</td>
+          </tr>
+        </table>
+      </div>
+      <h2 id="Bin">Chiffrer ou déchiffrer le message écrit en binaire</h2>
+      <p>Pour transformer un texte en écriture binaire veuillez entrer le taper ci-dessous : </p>
+      <p>Attention ! Si vous avez plusieurs nombres à convertir, veuillez les séparer par des espaces.</p>
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte à chiffrer :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : 1001" id="text_bin" value="" /></textarea>
+          <div class="container">
+            <div class="buttons">
+              <a class="btn" onclick="document.getElementById('bin').innerHTML=codage_bin_to_oct()">Ecriture Octale</a>
+              <a class="btn" onclick="document.getElementById('bin').innerHTML=codage_bin_to_dec()">Ecriture Decimale</a>
+              <a class="btn" onclick="document.getElementById('bin').innerHTML=codage_bin_to_hex()">Ecriture Hexadecimale</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="bin" value="" /></textarea>
+      <p>Le système binaire (du latin binārĭus, « double ») est le système de numération utilisant la base 2. On nomme couramment bit (de l'anglais binary digit, soit « chiffre binaire ») les chiffres de la numération binaire positionnelle. Un bit peut prendre deux valeurs, notées par convention 0 et 1.</p>
+      <p>Il s'agit de la plus petite unité d'information manipulable par une machine numérique. Il est possible de représenter physiquement cette information binaire :</p>
+      <li>par un signal électrique, magnétique ou lumineux , qui, au-delà d'un certain seuil, correspond à la valeur 1 ;</li>
+      <li>par des aspérités géométriques dans une surface ;</li>
+      <li>grâce à des bistables, c'est-à-dire des composants électroniques qui ont deux états d'équilibre (l'un correspond à l'état 1, l'autre à 0).</li>
+
+      <h2 id="Oct">Chiffrer ou déchiffrer le message écrit en octal</h2>
+      <p>Pour transformer un texte en écriture octale veuillez entrer le taper ci-dessous : </p>
+      <p>Attention ! Si vous avez plusieurs nombres à convertir, veuillez les séparer par des espaces.</p>
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte à chiffrer :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : 17" id="text_oct" value="" /></textarea>
+          <div class="container">
+            <div class="buttons">
+              <a class="btn" onclick="document.getElementById('oct').innerHTML=codage_oct_to_bin()">Ecriture Binaire</a>
+              <a class="btn" onclick="document.getElementById('oct').innerHTML=codage_oct_to_dec()">Ecriture Decimale</a>
+              <a class="btn" onclick="document.getElementById('oct').innerHTML=codage_oct_to_hex()">Ecriture Hexadecimale</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="oct" value="" ></textarea>
+      <p>Le système de numération octal est le système de numération de base 8, et utilise les chiffres de 0 à 7. D'après l'ouvrage de Donald Knuth's, The Art of Computer Programming, il fut inventé par le roi Charles XII de Suède.</p>
+      <p>La numération octale peut être construite à partir de la numération binaire en groupant les chiffres consécutifs en triplets (à partir de la droite). Par exemple, la représentation binaire du nombre décimal 74 est 1001010, que l'on groupe en (00)1 001 010 ; ainsi, la représentation octale est 1 pour 1, 1 pour le groupe 001, et 2 pour le groupe 010, ce qui donne 112.</p>
+      <p>Le système octal est quelquefois utilisé en calcul à la place de l'hexadécimal. Il possède le double avantage de ne pas requérir de symbole supplémentaire pour ses chiffres et d'être une puissance de deux pour pouvoir grouper les chiffres.</p>
+      <p>Un nombre qui commence par un 0 (zéro) est considéré dans certains langages comme exprimé dans le système octal. Dans ces langages, 045 est compris comme un nombre octal, qui vaut 37 en décimal. Cependant, ce système est rarement utilisé de nos jours, et sa survivance provoque des confusions et des erreurs : la majorité des développeurs ignore ce principe et attend que 045 soit compris comme le nombre décimal 45. Ainsi, dans les langages modernes, le préfixe 0 tend à être remplacé par des préfixes plus explicites, ou à être supprimé.</p>
+      
+      <h2 id="Dec">Chiffrer ou déchiffrer le message écrit en décimale</h2>
+      <p>Pour transformer un texte en écriture décimale veuillez entrer le taper ci-dessous : </p>
+      <p>Attention ! Si vous avez plusieurs nombres à convertir, veuillez les séparer par des espaces.</p>
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte à chiffrer :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : 45" id="text_dec" value="" ></textarea>
+
+          <div class="container">
+            <div class="buttons">
+              <a class="btn" onclick="document.getElementById('dec').innerHTML=codage_dec_to_bin()">Ecriture Binaire</a>
+              <a class="btn" onclick="document.getElementById('dec').innerHTML=codage_dec_to_oct()">Ecriture Octale</a>
+              <a class="btn" onclick="document.getElementById('dec').innerHTML=codage_dec_to_hex()">Ecriture Hexadecimale</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="dec" value="" ></textarea>
+      <p>Le système décimal est un système de numération utilisant la base dix. Dans ce système, les puissances de dix et leurs multiples bénéficient d'une représentation privilégiée.</p>
+      <p>La base dix est très ancienne. Elle découle d'un choix naturel, dicté par le nombre des doigts des deux mains. Les Proto-indo-européens comptaient probablement en base dix. Un système de notation décimale a été mis au point :</p>
+      <li>au IIIe millénaire av. J.-C., par les Égyptiens (le système égyptien était toutefois un système décimal sans positionnement) ;</li>
+      <li>au IIIe millénaire av. J.-C., par les Grecs (d'abord dans les écritures et notations des Minoens, puis des Mycéniens, puis attique) ;</li>
+      <li>avant -1350, par les Chinois ;</li>
+      <li>vers -650, par les Étrusques ;</li>
+      <li>vers -500, par les Indiens en sanskrit.</li>
+      <p>Noter cependant l'usage de systèmes non décimaux, dont voici quelques exemples.</p>
+      <p>Les anciennes civilisations de Mésopotamie (Sumer, Babylone…) utilisaient un système positionnel de base sexagésimale (60).</p>
+      <p>À noter également l'usage de systèmes proto-élamites mixtes, dit bisexagésimaux (binaire, décimal ou sexagésimal suivant la qualification des objets ou des êtres vivants à décompter).</p>
+      <p>La civilisation maya utilisait un système de base 20 en introduisant quelques variantes.
+Le basque (ainsi que les langues celtiques) se fonde aussi sur la base 20. Il en reste quelques traces en français avec la dénomination « quatre-vingts ».</p>
+      
+      <h2 id="Hex">Chiffrer ou déchiffrer le message écrit en hexadécimal</h2>
+      <p>Pour transformer un texte en écriture hexadécimale veuillez entrer le taper ci-dessous : </p>
+      <p>Attention ! Si vous avez plusieurs nombres à convertir, veuillez les séparer par des espaces.</p>
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte à chiffrer :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : f" id="text_hex" value="" ></textarea>
+          <div class="container">
+            <div class="buttons">
+              <a class="btn" onclick="document.getElementById('hex').innerHTML=codage_hex_to_bin()">Ecriture Binaire</a>
+              <a class="btn" onclick="document.getElementById('hex').innerHTML=codage_hex_to_oct()">Ecriture Octale</a>
+              <a class="btn" onclick="document.getElementById('hex').innerHTML=codage_hex_to_dec()">Ecriture Decimale</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="hex" value="" ></textarea>
+      <p>Le système hexadécimal est un système de numération utilisant la base 16.</p>
+      <p>Le nom hexadécimal provient du fait qu'il utilise les 10 premiers chiffres arabes (décimal, dix) puis les 6 premières lettres de l'alphabet latin (hexa, six) : 0 1 2 3 4 5 6 7 8 9 A B C D E F.</p>
+      <p>Ce fut l'entreprise Américaine IBM qui commença à utiliser ces chiffres-là en 1963. Il s'agit du standard actuellement reconnu.</p>
+      <p>Ce format est largement utilisé en informatique car il permet une conversion facile avec le système binaire, qui est utilisé par les ordinateurs.</p>
+      <p>En outre, la notation hexadécimale est plus compacte que la notation binaire, et utilise jusqu'à quatre fois moins de chiffres que ce dernier pour représenter le même nombre.</p>
+      <p>L'hexadécimal représente par chaque chiffre exactement la moitié d'un octet. Ceci est un avantage pour l'utilisation en informatique, où l'octet est l'unité de compte. D'autre part, les puissances naturelles du système hexadécimal correspondent aux préfixes binaires Méga-, Téra-, Exa- et Yotta- (étant seize à la puissance de cinq, dix, quinze et vingt respectivement). Les multiples binaires intermédiaires : kilo-, Giga-, Péta- et Zetta- sont respectivement 0x400 unités, 0x400 Mebi, 0x400 Tebi et 0x400 Exbi.
+La conversion de texte de l'écriture alphabétique vers la notation hexadécimale peut s'opérer en utilisant la notation ASCII. La lettre " A " correspond ainsi au code hexadécimal 41 et l'espace au code hexadécimal 20.</p>
+      
+      <h2 id="Char">Chiffrer ou déchiffrer le message écrit en chaîne de caractères</h2>
+      <p>Pour transformer un texte en écriture de chaîne de caractères veuillez entrer le taper ci-dessous : </p>
+      <p>Attention ! Si vous avez plusieurs nombres à convertir, veuillez les séparer par des espaces.</p>
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte à chiffrer :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : Hello" id="text_char" value="" ></textarea>
+          <div class="container">
+            <div class="buttons">
+              <a class="btn" onclick="document.getElementById('char').innerHTML=codage_char_to_bin()">Ecriture Binaire</a>
+              <a class="btn" onclick="document.getElementById('char').innerHTML=codage_char_to_oct()">Ecriture Octale</a>
+              <a class="btn" onclick="document.getElementById('char').innerHTML=codage_char_to_dec()">Ecriture Decimale</a>
+              <a class="btn" onclick="document.getElementById('char').innerHTML=codage_char_to_hex()">Ecriture Hexadecimale</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="char" value="" ></textarea>
+      <p>En informatique, une chaîne de caractères est à la fois conceptuellement une suite ordonnée de caractères et physiquement une suite ordonnée d'unités de code (code unit). La chaîne de caractères est un type de donnée dans de nombreux langages informatiques. La traduction en anglais est string.</p>
+    </div>
+    <footer>
+      <div class="mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <h3>Nos réseaux sociaux :</h3>
+          <div class="mettre_en_ligne">
+            <a href="https://www.instagram.com/" title = "Page Instagram CD"><img src="assets/images/icone_insta.png" width="60%"></a>
+            <a href="https://www.youtube.com/" title = "Page Youtube CD"><img src="assets/images/icone_youtube.png" width="60%"></a>
+            <a href="https://www.twitter.com/?hl=fr" title = "Page Twitter CD"><img src="assets/images/icone_twitter.png" width="60%"></a>
+            <a href="https://www.facebook.com/?hl=fr" title = "Page Facebook CD"><img src="assets/images/icone_facebook.png" width="60%"></a>
+          </div>
+        </div>
+        <div class="mettre_en_colonne">
+          <h3>Restons en contact :</h3>
+          <p>+33-6-11-87-90-72</p>
+          <p>codage.decodage@outlook.com</p>
+          <p>166, Rue des fées, Paris 13e</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

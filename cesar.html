@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Le Meilleur site du monde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/cesar.js" defer></script>
+  </head>
+  
+  <body>
+    <button onclick="topFunction()" id="but_haut" title="Appuiez pour remonter en haut de la page">En haut</button>
+    <header>
+      <nav>
+        <ul class="barre_de_nav">
+          <li><a><img src="assets/images/logo.png" width="29%"></a></li>
+          <li><a href="home.html">Presentation</a></li>
+          <li><a href="cesar.html">César</a></li>
+          <li><a href="vigenere.html">Vigenère<a></li>              
+          <li><a href="beaufort.html">Beaufort</a></li>
+          <li><a href="xor.html">XOR</a></li>
+          <li><a href="ascii.html">ASCII</a></li>
+        </ul>
+      </nav>
+    </header>  
+    <div class="ccc"> 
+      <h2>Chiffrer ou déchiffrer avec le code César</h2>
+      <p>Pour chiffrer ou déchiffrer avec le code César veuillez entrer le texte clair ou non et le pas secret ci-dessous : </p>
+      <p>Attention ! Le pas doit être un nombre et le texte ne doit pas contenir des accents (Exemple : « é », « è », « ç », « à »…).</p>
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : Bonjour" id="text_crypter" value="" /></textarea>
+          <p> Entrez le pas secret :</p>
+          <input name="le pas" type="text" placeholder="Ex : 4" id="un_pas_text_crypter" value="" /></p>
+          <div class="buttons">
+            <a class="btn" onclick="document.getElementById('demo').innerHTML=codage_cesar()">Chiffrer</a>
+            <a class="btn" onclick="document.getElementById('demo').innerHTML=decodage_cesar()">Déchiffrer</a>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="demo" value="" ></textarea>
+      
+      <h2>Le code César : qu'est-ce que c'est et comment cela fonctionne ?</h2>      
+      <p>Le code César est l’une des méthodes de cryptographie les plus simples. Il consiste en substitution monoalphabétique, c’est-à-dire chaque lettre du message à coder est remplacée par une autre lettre qui se situe un peu plus loin dans l'alphabet. La distance de décalage, autrement appelé un pas, est choisie par l’utilisateur, ce pas constitue une clé pour chiffrer et déchiffrer un message. Le chiffre de César doit son nom à Jules César, un général né en 100 av. J.-C. et mort en 44 av. J.-C. Il l'utilisait avec l'alphabet grec pour certaines de ses correspondances secrètes militaires.</p>
+      <p>Pour vous montrer comment le code César fonctionne plus en détail, nous allons chiffrer et déchiffrer le mot « espion » avec un pas de 4 :</p>
+      <h4>Chiffrement</h4>
+      <p>1 re étape : décalons l’alphabet. Nous devons tout simplement décaler chaque lettre de l’alphabet quatre fois. Donc pour coder « A », prendre l'alphabet et regarder quatre lettres plus loin : il y a « E ». Donc A se chiffre en E. Par cette méthode, on obtient un nouvel alphabet.</p>         
+      <table>
+        <tr>
+          <th>Alphabet initial</th>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <th>Alphabet avec un pas 4</th>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+        </tr> 
+      </table>
+      <p>2 ère étape : remplacer la lettre correspondante. Nous devons chercher une lettre à chiffrer dans l’alphabet original et la remplacer par celui qui se trouve en dessous dans le nouvel.</p>
+      <table>
+        <tr>
+          <th>Alphabet initial</th>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td class="lettre">E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <th>Alphabet avec un pas 4</th>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td class="lettre">I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+        </tr> 
+      </table>
+      <p>Finalement, nous obtenons que le mot « espion » se chiffre en « iwtmsr ».</p>
+      
+      <h4>Déchiffrement</h4>
+      <p>Afin de montrer comment déchiffrer un message et à la fois de s’assurer que nous ne sommes pas trompés, déchiffrons le mot « iwtmsr » reçu auparavant. Lorsque nous avons à déchiffrer, nous devons faire suivre cette méthode :</p>
+      <p>1 re étape : écrire un nouvel alphabet avec un pas de décalage comme avant, mais maintenant nous allons décaler toutes les lettres à gauche avec un pas de 4. Voici donc l’alphabet original et avec ce décalage :</p>
+      <table>
+        <tr>
+          <th>Alphabet initial</th>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <th>Alphabet avec un pas 4 (à gauche)</th>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+        </tr> 
+      </table>
+      <p>2 e étape : tout comme pour chiffrer le message, nous devons remplacer chaque lettre du mot à déchiffrer par la lettre correspondante. Donc la lettre "i" devient un "e".</p>
+      <table>
+        <tr>
+          <th>Alphabet initial</th>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td class="lettre">I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <th>Alphabet avec un pas 4(à gauche)</th>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td class="lettre">E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+        </tr> 
+      </table>
+      <p>Donc nous recevons bien le mot « espion ».</p>
+      <p>Si vous voulez savoir plus sur ce type de chiffrement, <a href = "https://fr.wikipedia.org/wiki/Chiffrement_par_d%C3%A9calage">cliquez ici</a>.</p>
+    </div>
+    <footer>
+      <div class="mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <h3>Nos réseaux sociaux :</h3>
+          <div class="mettre_en_ligne">
+            <a href="https://www.instagram.com/" title = "Page Instagram CD"><img src="assets/images/icone_insta.png" width="60%"></a>
+            <a href="https://www.youtube.com/" title = "Page Youtube CD"><img src="assets/images/icone_youtube.png" width="60%"></a>
+            <a href="https://www.twitter.com/?hl=fr" title = "Page Twitter CD"><img src="assets/images/icone_twitter.png" width="60%"></a>
+            <a href="https://www.facebook.com/?hl=fr" title = "Page Facebook CD"><img src="assets/images/icone_facebook.png" width="60%"></a>
+          </div>
+        </div>
+        <div class="mettre_en_colonne">
+          <h3>Restons en contact :</h3>
+          <p>+33-6-11-87-90-72</p>
+          <p>codage.decodage@outlook.com</p>
+          <p>166, Rue des fées, Paris 13e</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

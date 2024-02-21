@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Le Meilleur site du monde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/vigenere.js" defer></script>
+  </head>
+  
+  <body>
+    <button onclick="topFunction()" id="but_haut" title="Appuiez pour remonter en haut de la page">En haut</button>
+    <header>
+      <nav>
+        <ul class="barre_de_nav">
+          <li><a><img src="assets/images/logo.png" width="29%"></a></li>
+          <li><a href="home.html">Presentation</a></li>
+          <li><a href="cesar.html">César</a></li>
+          <li><a href="vigenere.html">Vigenère</a></li>              
+          <li><a href="beaufort.html">Beaufort</a></li>
+          <li><a href="xor.html">XOR</a></li>
+          <li><a href="ascii.html">ASCII</a></li>
+        </ul>
+      </nav>
+    </header>   
+    <div class="ccc"> 
+      <h2>Chiffrer ou déchiffrer avec le code de Vigenère</h2>
+      <p>Pour chiffrer ou déchiffrer avec le code de Vigenère veuillez entrer le texte clair ou non et le mot-clé ci-dessous : </p>
+      <p>Attention ! Le texte et le mot-clé ne doivent pas contenir des accents (Exemple : « é », « è », « ç », « à »…).</p>    
+      
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : Bonjour" id="text_crypter2" value="" /></textarea>
+          <p>Entrez le mot-clé :</p>
+          <input name="mot-c" type="text" placeholder="Ex : abc" id="mot-cle" value="" /></p>
+          <div class="buttons">
+            <a class="btn" onclick="document.getElementById('text_vig').innerHTML=codage_vig()">Chiffrer</a>
+            <a class="btn" onclick="document.getElementById('text_vig').innerHTML=decodage_vig()">Déchiffrer</a>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte déchiffré ou chiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="text_vig" value="" /></textarea>
+      <h2>Le code de Vigenère : qu'est-ce que c'est et comment cela fonctionne ?</h2>
+      <p>Le code de Vigenère fait partie des méthodes de cryptographie qui reposent sur la substitution polyalphabétique. En effet, cette méthode est une version plus complexe du code de César avec un ajout d’une clé quelconque. (P. S. : si vous souhaitez savoir comment fonctionne le chiffrement de César ou chiffrer ou déchiffrer un message avec <a href="cesar.html">cliquez ici</a>).</p>
+      <p>Le code de Vigenère doit son nom à Blaise de Vigenère, diplomate, cryptographe, traducteur, alchimiste et astrologue français. Il a écrit un traité décrivant ce chiffre en 1586.</p>
+      <p>En effet, pour chiffrer le message, nous devons additionner, en prenant leur rang dans l’alphabet, lettre par lettre de la clé et du texte pour obtenir une lettre finale chiffrée. Pour faire en sorte que la longueur du texte soit la même que celle de la clé, nous allons répéter la clé le nombre qu'il faudra (Exemple : si nous avons une clé « abc », alors elle deviendra « abcabcabc… » jusqu’à être de la même longueur que le texte à coder).</p>
+      <p>Pour mieux vous faire comprendre comment fonctionne cette méthode de chiffrement, nous allons l'appliquer au mot « espion » avec le mot-clé « cle ». </p>
+      <h4>Chiffrement</h4>
+      <p>1 re étape : nous allons en premier lieu définir le rang de chaque lettre de l’alphabet pour simplifier la recherche :</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th>Alphabet</th>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <th>Son rang</th>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+        </tr> 
+      </table>
+      <p>2 e étape : par ailleurs, nous allons associer chaque lettre du texte à chiffrer à celle du mot-clé et additionner leurs rangs dans l'alphabet :</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th>Mot clair</th>
+          <td>E</td>
+          <td>S</td>
+          <td>P</td>
+          <td>I</td>
+          <td>O</td>
+          <td>N</td>
+        </tr>
+        <tr>
+          <th>Le rang</th>
+          <td>4</td>
+          <td>18</td>
+          <td>15</td>
+          <td>8</td>
+          <td>14</td>
+          <td>13</td>
+        </tr> 
+        <tr>
+          <th>Mot-clé</th>
+          <td>C</td>
+          <td>L</td>
+          <td>E</td>
+          <td>C</td>
+          <td>L</td>
+          <td>E</td>
+        </tr> 
+        <tr>
+          <th>Le rang</th>
+          <td>2</td>
+          <td>11</td>
+          <td>4</td>
+          <td>2</td>
+          <td>11</td>
+          <td>4</td>
+        </tr> 
+        <tr>
+          <th>Somme</th>
+          <td>6</td>
+          <td>29</td>
+          <td>19</td>
+          <td>10</td>
+          <td>25</td>
+          <td>17</td>
+        </tr> 
+      </table>
+      <p>3 e étape : finalement, lirons dans un tableau trouvé dans la 1 re étape chaque lettre du mot chiffré en fonction des sommes obtenues dans la 3e étape. Si le numéro est supérieur à 25, nous devons alors soustraire 26 au résultat. Par exemple, précédemment, nous avons reçu que la somme des rangs des lettres "L" et "S" est 31, donc la nouvelle lettre se trouve au rang 29-26=3 de l'alphabet, c’est-à-dire "D".</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th>Rang reçu</th>
+          <td>6</td>
+          <td>3</td>
+          <td>19</td>
+          <td>10</td>
+          <td>25</td>
+          <td>17</td>
+        </tr>
+        <tr>
+          <th>La lettre</th>
+          <td>G</td>
+          <td>D</td>
+          <td>T</td>
+          <td>K</td>
+          <td>Z</td>
+          <td>R</td>
+        </tr>
+      </table>
+      <p>Finalement, le mot « espion » avec le mot-clé « cle » en code Vigenère se chiffre « gdtkzr ».</p>
+      <h4>Déchiffrement</h4>
+      <p>Afin de montrer comment déchiffrer un code de Vigenère et à la fois de s’assurer que nous ne sommes pas trompés, déchiffrons le mot « gdtkzr » reçu auparavant avec le mot-clé « cle ». Lorsque nous avons à déchiffrer, nous devons suivre cette méthode :</p>
+      <p>1 re étape : nous allons, en premier lieu, reprendre le tableau trouvé au début comportant le rang de chaque lettre de l’alphabet :</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th>Alphabet</th>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+          <td>H</td>
+          <td>I</td>
+          <td>J</td>
+          <td>K</td>
+          <td>L</td>
+          <td>M</td>
+          <td>N</td>
+          <td>O</td>
+          <td>P</td>
+          <td>Q</td>
+          <td>R</td>
+          <td>S</td>
+          <td>T</td>
+          <td>U</td>
+          <td>V</td>
+          <td>W</td>
+          <td>X</td>
+          <td>Y</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <th>Son rang</th>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+        </tr> 
+      </table>
+      <p>2 e étape : nous allons associer par ailleurs, chaque lettre du mot à déchiffrer et du mot-clé comme ceci et cette fois-ci nous allons soustraire le rang du mot-clé à celui du mot à déchiffrer :</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th>Mot crypté</th>
+          <td>G</td>
+          <td>D</td>
+          <td>T</td>
+          <td>K</td>
+          <td>Z</td>
+          <td>R</td>
+        </tr>
+        <tr>
+          <th>Le rang</th>
+          <td>6</td>
+          <td>3</td>
+          <td>19</td>
+          <td>10</td>
+          <td>25</td>
+          <td>17</td>
+        </tr> 
+        <tr>
+          <th>Mot-clé</th>
+          <td>C</td>
+          <td>L</td>
+          <td>E</td>
+          <td>C</td>
+          <td>L</td>
+          <td>E</td>
+        </tr> 
+        <tr>
+          <th>Le rang</th>
+          <td>2</td>
+          <td>11</td>
+          <td>4</td>
+          <td>2</td>
+          <td>11</td>
+          <td>4</td>
+        </tr> 
+        <tr>
+          <th>Somme</th>
+          <td>4</td>
+          <td>-8</td>
+          <td>15</td>
+          <td>8</td>
+          <td>14</td>
+          <td>13</td>
+        </tr> 
+      </table>
+      <p>3 e étape : associons enfin chaque rang reçu précédemment à sa lettre dans l’alphabet. Si nous recevons un résultat négatif comme dans le cas de « D » et « L », nous devons alors à leur différence additionner 26. Nous recevons le nombre -8+26=18 et en regardant le tableau du 1e étape ce nombre correspond à la lettre « S ». Donc la lettre « D » se déchiffre en « S ».</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th>Rang reçu</th>
+          <td>4</td>
+          <td>18</td>
+          <td>15</td>
+          <td>8</td>
+          <td>14</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <th>La lettre</th>
+          <td>E</td>
+          <td>S</td>
+          <td>P</td>
+          <td>I</td>
+          <td>O</td>
+          <td>N</td>
+        </tr>
+      </table>
+      <p>Donc nous recevons bien le mot « espion ».</p>
+      <p>Si vous voulez savoir plus sur ce type de chiffrement, <a href="https://fr.wikipedia.org/wiki/Chiffre_de_Vigen%C3%A8re">cliquez ici</a>.</p>
+    </div>
+    <footer>
+      <div class="mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <h3>Nos réseaux sociaux :</h3>
+          <div class="mettre_en_ligne">
+            <a href="https://www.instagram.com/" title = "Page Instagram CD"><img src="assets/images/icone_insta.png" width="60%"></a>
+            <a href="https://www.youtube.com/" title = "Page Youtube CD"><img src="assets/images/icone_youtube.png" width="60%"></a>
+            <a href="https://www.twitter.com/?hl=fr" title = "Page Twitter CD"><img src="assets/images/icone_twitter.png" width="60%"></a>
+            <a href="https://www.facebook.com/?hl=fr" title = "Page Facebook CD"><img src="assets/images/icone_facebook.png" width="60%"></a>
+          </div>
+        </div>
+        <div class="mettre_en_colonne">
+          <h3>Restons en contact :</h3>
+          <p>+33-6-11-87-90-72</p>
+          <p>codage.decodage@outlook.com</p>
+          <p>166, Rue des fées, Paris 13e</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

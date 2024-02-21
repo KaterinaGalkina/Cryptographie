@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Le Meilleur site du monde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/beaufort.js" defer></script>
+  </head>
+  
+  <body>
+    <button onclick="topFunction()" id="but_haut" title="Appuiez pour remonter en haut de la page">En haut</button>
+    <header>
+      <nav>
+        <ul class="barre_de_nav">
+          <li><a><img src="assets/images/logo.png" width="29%"></a></li>
+          <li><a href="home.html">Presentation</a></li>
+          <li><a href="cesar.html">César</a></li>
+          <li><a href="vigenere.html">Vigenère</a></li>              
+          <li><a href="beaufort.html">Beaufort</a></li>
+          <li><a href="xor.html">XOR</a></li>
+          <li><a href="ascii.html">ASCII</a></li>
+        </ul>
+      </nav>
+    </header>  
+    <div class="ccc"> 
+      <h2>Chiffrer ou déchiffrer avec le code de Beaufort</h2>
+      <p>Pour chiffrer ou déchiffrer avec le code de Beaufort veuillez entrer le texte clair ou chiffré et le mot-clé ci-dessous : </p>
+      <p>Attention ! Le mot-clé et le texte ne doivent pas contenir des accents (Exemple : « é », « è », « ç », « à »…).</p>
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : Bonjour" id="text_crypter_beaufort" value="" /></textarea>
+          <p> Entrez le mot-clé :</p>
+          <input name="le pas" type="text" placeholder="Ex : abc" id="mot_cle_beaufort" value="" /></p>
+          <div class="container">
+            <div class="buttons">
+              <a class="btn" onclick="document.getElementById('txt_beaufort').innerHTML=codage_beaufort()">Chiffrer</a>
+              <a class="btn" onclick="document.getElementById('txt_beaufort').innerHTML=decodage_beaufort()">Dechiffrer</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="txt_beaufort" value="" /></textarea>
+      <h2>Le code de Beaufort : qu'est-ce que c'est et comment cela fonctionne ?</h2>
+      <p>Le code de Beaufort, tel que le code de Vigenère, fait partie des
+méthodes de cryptographie qui reposent sur la substitution polyalphabétique.</p>
+      <p>Il a été popularisé par l'amiral anglais Sir Francis Beaufort, qui a surtout laissé son
+nom à l'échelle de Beaufort, une échelle empirique utilisée par les marins pour
+mesurer la force du vent par la seule observation des effets du vent sur la surface de
+la mer.</p>
+      <p>À savoir que le code de Beaufort est une variante du code de Vigenère, il utilise le
+carré de Vigenère d’une autre manière, au lieu d’additionner la clé au message clair,
+Beaufort soustrait le message clair de la clé. Pour le reste, il s’utilise exactement
+comme le code de Vigenère, c’est-à-dire que l’on choisit un mot-clé avec lequel on
+chiffre la première lettre du texte clair à l’aide de la première lettre de la clé et ainsi
+de suite. Pour faire en sorte que la longueur du texte soit la même que celui de la
+clé, on répète la clé en boucle (Exemple : si nous avons une clé quelconque telle
+que “mot” alors on obtient “motmotmot….” jusqu’à atteindre la longueur finale du
+texte clair).</p>
+      <p>Pour mieux vous faire comprendre comment fonctionne cette méthode, nous allons
+chiffrer et déchiffrer le mot “agent” avec le mot-clé “sept”.</p>
+      <h4>Chiffrement</h4>
+      <p>1 re étape : nous allons définir le rang de chaque lettre de l’alphabet pour simplifier
+la recherche, soit un rang allant de 0 à 25.</p>
+        <table > 
+  <!-- align = "center" -->
+         <tr>
+           <th>Alphabet</th>
+           <td>A</td>
+           <td>B</td>
+           <td>C</td>
+           <td>D</td>
+           <td>E</td>
+           <td>F</td>
+           <td>G</td>
+           <td>H</td>
+           <td>I</td>
+           <td>J</td>
+           <td>K</td>
+           <td>L</td>
+           <td>M</td>
+           <td>N</td>
+           <td>O</td>
+           <td>P</td>
+           <td>Q</td>
+           <td>R</td>
+           <td>S</td>
+           <td>T</td>
+           <td>U</td>
+           <td>V</td>
+           <td>W</td>
+           <td>X</td>
+           <td>Y</td>
+           <td>Z</td>
+         </tr>
+         <tr>
+          <th>Son rang</th>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+        </tr>
+      </table>
+      <p>2 e étape : par la suite, nous allons associer chaque lettre du texte à chiffrer à
+celle du mot-clé et ainsi soustraire le rang de chaque lettre du message clair à celui
+du mot-clé associé.</p>
+        <table > 
+  <!-- align = "center" -->
+          <tr>
+           <th>Mot clair</th>
+           <td>A</td>
+           <td>G</td>
+           <td>E</td>
+           <td>N</td>
+           <td>T</td>
+          </tr>
+          <tr>
+            <th>Le rang</th>
+            <td>0</td>
+            <td>6</td>
+            <td>4</td>
+            <td>13</td>
+            <td>19</td>
+          </tr>
+          <tr>
+            <th>Mot-clé</th>
+            <td>S</td>
+            <td>E</td>
+            <td>P</td>
+            <td>T</td>
+            <td>S</td>
+          </tr>
+          <tr>
+            <th>Le rang</th>
+            <td>18</td>
+            <td>4</td>
+            <td>15</td>
+            <td>19</td>
+            <td>18</td>
+          </tr>
+          <tr>
+           <th>Différence</th>
+           <td>18</td>
+           <td>-2</td>
+           <td>11</td>
+           <td>6</td>
+           <td>-1</td>
+          </tr>
+      </table>
+      <p>3 e étape : pour finir, nous lirons, à partir du premier tableau dans la 1 re étape,
+chaque lettre du mot chiffré en fonction des différences obtenues dans la 2 e
+étape. Si le numéro est inférieur à 0, nous allons ajouter 26 au résultat. Par exemple,
+nous avons reçu, de la différence des rangs des lettres “G” et “E”, un résultat de -2,
+donc la nouvelle lettre se trouve au rang (-2) + 26 = 24 de l’alphabet, c’est-à-dire “Y”.</p>
+      <table > 
+  <!-- align = "center" -->
+        <tr>
+          <th>Rang reçu</th>
+          <td>18</td>
+          <td>24</td>
+          <td>11</td>
+          <td>6</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <th>La lettre</th>
+          <td>S</td>
+          <td>Y</td>
+          <td>L</td>
+          <td>G</td>
+          <td>Z</td>
+        </tr>
+      </table>
+      <p>Au final, le mot “agent” avec le mot-clé “sept” en code de Beaufort, se chiffre “sylgz”.</p>
+      <h4>Déchiffrement</h4>
+      <p>Afin de montrer comment déchiffrer le code de Beaufort en s’assurant
+de ne pas y avoir d’erreurs, nous allons déchiffrer le mot “sylgz” reçu avec le mot-clé
+“sept”. Pour le déchiffrement, nous allons suivre cette méthode :</p>
+      <p>1 re étape : nous allons une nouvelle fois reprendre le tableau du début avec
+chaque rang des lettres de l’alphabet correspondantes :</p>
+        <table > 
+  <!-- align = "center" -->
+         <tr>
+           <th>Alphabet</th>
+           <td>A</td>
+           <td>B</td>
+           <td>C</td>
+           <td>D</td>
+           <td>E</td>
+           <td>F</td>
+           <td>G</td>
+           <td>H</td>
+           <td>I</td>
+           <td>J</td>
+           <td>K</td>
+           <td>L</td>
+           <td>M</td>
+           <td>N</td>
+           <td>O</td>
+           <td>P</td>
+           <td>Q</td>
+           <td>R</td>
+           <td>S</td>
+           <td>T</td>
+           <td>U</td>
+           <td>V</td>
+           <td>W</td>
+           <td>X</td>
+           <td>Y</td>
+           <td>Z</td>
+         </tr>
+         <tr>
+          <th>Son rang</th>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+        </tr>
+      </table>
+      <p>2 e étape : nous allons associer de nouveau chaque lettre du mot-clé au mot clair à déchiffrer en gardant la même méthode de soustraction, c’est une particularité du code de Beaufort qui, par un 2 e chiffrement par soustraction renvoie le mot
+original chiffré auparavant :</p>
+      <table > 
+  <!-- align = "center" -->
+        <tr>
+          <th>Mot crypté</th>
+          <td>S</td>
+          <td>Y</td>
+          <td>L</td>
+          <td>G</td>
+          <td>Z</td>
+        </tr>
+        <tr>
+          <th>Le rang</th>
+          <td>18</td>
+          <td>24</td>
+          <td>11</td>
+          <td>6</td>
+          <td>25</td>
+        </tr> 
+        <tr>
+          <th>Mot-clé</th>
+          <td>S</td>
+          <td>E</td>
+          <td>P</td>
+          <td>T</td>
+          <td>S</td>
+        </tr> 
+        <tr>
+          <th>Le rang</th>
+          <td>18</td>
+          <td>4</td>
+          <td>15</td>
+          <td>19</td>
+          <td>18</td>
+        </tr> 
+        <tr>
+          <th>Différence</th>
+          <td>0</td>
+          <td>-20</td>
+          <td>4</td>
+          <td>13</td>
+          <td>-7</td>
+        </tr> 
+      </table>
+      <p>3 e étape : associons chaque rang reçu précédemment avec la lettre correspondante. Si le
+résultat est négatif, il suffira d’additionner 26 au chiffre négatif trouvé ! (Exemple
+simple : (-20) + 26 = 6. Donc la lettre "Y" se décode en "G")</p>
+      <table > 
+  <!-- align = "center" -->
+        <tr>
+          <th>Rang reçu</th>
+          <td>0</td>
+          <td>6</td>
+          <td>4</td>
+          <td>13</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <th>La lettre</th>
+          <td>A</td>
+          <td>G</td>
+          <td>E</td>
+          <td>N</td>
+          <td>T</td>
+        </tr>
+      </table>
+      <p>Nous obtenons donc bien le mot “agent”, le mot chiffré est donc le bon !</p>
+      <p>Si vous voulez savoir plus sur ce type de codage, <a href="https://fr.wikipedia.org/wiki/Chiffre_de_Beaufort#:~:text=En%20cryptographie%2C%20le%20chiffre%20de,par%20Jean%20Sestri%20vers%201710.">cliquez ici</a>.</p>
+    </div>
+    <footer>
+      <div class="mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <h3>Nos réseaux sociaux :</h3>
+          <div class="mettre_en_ligne">
+            <a href="https://www.instagram.com/" title = "Page Instagram CD"><img src="                    assets/images/icone_insta.png" width="60%"></a>
+            <a href="https://www.youtube.com/" title = "Page Youtube CD"><img src="assets/images/icone_youtube.png" width="60%"></a>
+            <a href="https://www.twitter.com/?hl=fr" title = "Page Twitter CD"><img src="assets/images/icone_twitter.png" width="60%"></a>
+            <a href="https://www.facebook.com/?hl=fr" title = "Page Facebook CD"><img src="assets/images/icone_facebook.png" width="60%"></a>
+          </div>
+        </div>
+        <div class="mettre_en_colonne">
+          <h3>Restons en contact :</h3>
+          <p>+33-6-11-87-90-72</p>
+          <p>codage.decodage@outlook.com</p>
+          <p>166, Rue des fées, Paris 13e</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

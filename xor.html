@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Le Meilleur site du monde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/xor.js" defer></script>
+  </head>
+  
+  <body>
+    <button onclick="topFunction()" id="but_haut" title="Appuiez pour remonter en haut de la page">En haut</button>
+    <header>
+      <nav>
+        <ul class="barre_de_nav">
+          <li><a><img src="assets/images/logo.png" width="29%"></a></li>
+          <li><a href="home.html">Presentation</a></li>
+          <li><a href="cesar.html">César</a></li>
+          <li><a href="vigenere.html">Vigenère</a></li>             
+          <li><a href="beaufort.html">Beaufort</a></li>
+          <li><a href="xor.html">XOR</a></li>
+          <li><a href="ascii.html">ASCII</a></li>
+        </ul>
+      </nav>
+    </header> 
+    <div class="ccc"> 
+      <h2>Chiffrer ou déchiffrer avec le code XOR</h2>
+      <p>Pour chiffrer ou déchiffrer avec le code XOR, veuillez entrer le texte clair ou chiffré sous forme des nombres décimaux séparés par des espaces et le mot-clé ci-dessous : </p>
+      <p>Attention ! Ce type de chiffrement ne peut être utilisé uniquement pour les nombres décimaux, vis-à-vis des caractères non-imprimables.</p>
+      
+      <div class = "mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <p>Entrez le texte (en base 10) :</p>
+          <textarea name="text_a_crypter" type="text" placeholder="Ex : 175" id="text_crypter2" value="" /></textarea>
+          <p>Entrez le mot-clé (en base 10) :</p>
+          <input name="mot-c" type="text" placeholder="Ex : 100" id="mot-cle" value="" /></p>
+          <div class="buttons">
+            <a class="btn" onclick="document.getElementById('text_xor').innerHTML=codage_xor()">Chiffrer</a>
+            <a class="btn" onclick="document.getElementById('text_xor').innerHTML=decodage_xor()">Dechiffrer</a>
+          </div>
+        </div>
+      </div> 
+      <p>Lorsque vous avez appuyé sur le bouton, veuillez récupérer le texte chiffré ou déchiffré ci-dessous :</p>
+      <textarea name="text_a_crypter" type="text" id="text_xor" value="" /></textarea>
+      <h2>Le code de XOR : qu'est-ce que c'est et comment cela fonctionne ?</h2>
+      <p>Le cryptage XOR est un système de chiffrement basique, mais n'est pas limité. Ainsi, il a beaucoup été utilisé dans les débuts de l'informatique et continue à l'être encore
+aujourd'hui, car il est facile à implémenter, dans toute sorte de programmes.</p>
+      <p>Le XOR est un opérateur logique qui correspond à un "OU exclusif" : c'est le (A OU B) qu'on utilise en logique, mais qui exclue le cas où A et B sont simultanément vrais. Voici sa table de vérité :</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th>A</th>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>B</th>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <th>A XOR B</th>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+      </table>
+      <p>Pour vous montrer comment le chiffrement XOR fonctionne plus en détail, nous allons coder et décoder le nombre "175" avec une clé "100" :</p>
+      <h4>Chiffrement</h4>
+      <p>1 re étape : représentons tout d’abord notre nombre à chiffrer et notre clef (lesquels sont actuellement notés en base 10) en base 2, c’est-à-dire en binaire. Pour cela, nous devons diviser un nombre par 2 jusqu’à obtenir 0 en tant qu’un multiple de 2, en notant les restes de chacune division. Par ailleurs, nous devons renverser la liste des restes obtenus et cela constitue notre résultat de conversion.</p>
+      <p>Dans cet exemple, nous devons représenter "175" et "100" en binaire :</p>
+      <ul>175=2*87+1</ul>
+      <ul>87=2*43+1</ul>
+      <ul>43=2*21+1</ul>
+      <ul>21=2*10+1</ul>
+      <ul>10=2*5+0</ul>
+      <ul>5=2*2+1</ul>
+      <ul>2=2*1+0</ul>
+      <ul>1=2*0+1</ul>
+      <p>Donc le nombre "175" est "10101111" en base 2. Nous avons également une autre façon de faire pour trouver la représentation d’un nombre en binaire : afin de simplifier vos journées d’espionnage, notre site vous offre également des programmes, lesquelles permettent convertir des nombres et des caractères en toute base du code ASCII ! Et vous pouvez-y accéder en <a href="ascii.html">cliquant ici</a>.</p>
+      <p>À cette étape nous obtenons donc que le nombre "175" est égal à "10101111" en binaire et "100" – à "1100100".</p>
+      <p>2 e étape : maintenant, nous devons appliquer l’opération XOR bite à bite du nombre avec la clef. Nous obtenons donc ce tableau :</p>
+      <table > 
+        <!-- align = "center" -->
+        <tr>
+          <th rowspan="2">XOR</th>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th> = </th>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </table>
+      <p>3 e étape : nous avons pratiquement fait tout le travail et il ne reste plus qu’à reconvertir en base 10 notre nombre obtenu. Nous pouvons le faire soit par un calcul soit en utilisant le programme et pour cela, vous pouvez <a href="ascii.html">cliquer ici</a>. Cependant, si vous préférez la 1 re méthode voici ce que vous devez faire :</p>
+      <p>Dans cet exemple, nous allons convertir le nombre binaire "11001011" en nombre décimal. D'abord, notez-le. Inscrivez la liste des puissances de deux de droite à gauche. Commencez à 2 puissance 0, soit « 1 ». Incrémentez l'exposant d'une unité à chaque fois. Arrêtez-vous lorsque vous avez autant de puissances que de chiffres dans le nombre binaire. Dans notre exemple, "11001011" comporte huit chiffres, donc vous obtenez les 8 nombres suivants : 128, 64, 32, 16, 8, 4, 2, 1.</p>
+      <p>Écrivez "11001011" sous les nombres 128, 64, 32, 16, 8, 4, 2 et 1 de sorte que chaque chiffre binaire corresponde à sa puissance de deux. Le « 1 » tout à droite du nombre écrit en binaire doit correspondre au « 1 » tout à droite de la liste des puissances de deux et ainsi de suite. Vous pouvez aussi écrire les chiffres binaires au-dessus des puissances de deux, si vous préférez. Ce qui importe, c'est qu'ils se correspondent.</p>
+      <p>Tracez des petits tirets qui relient la puissance au chiffre binaire en commençant par la droite, en connectant chaque chiffre consécutif du nombre binaire à la puissance de deux qui arrive ensuite dans la liste du haut. Commencez par dessiner un trait reliant le premier chiffre du nombre binaire à la première puissance de deux dans la liste au-dessus. Ensuite, dessinez une ligne qui part du deuxième chiffre du nombre binaire et qui le relie à la seconde puissance de deux dans la liste. Continuez à connecter chaque chiffre binaire avec la puissance de 2 correspondante. Cela vous aidera à visualiser la relation entre les deux groupes de nombre.</p>
+      <p>Passez en revue tous les chiffres du nombre en binaire. Si le chiffre est un 1, écrivez la puissance de 2 correspondante en bas de la ligne, sous le chiffre. Si le chiffre est un 0, écrivez 0 en bas de la ligne, sous le chiffre.</p>
+      <p>À présent, additionnez les nombres écrits sous la ligne. Voici ce que cela donne : 128 + 64 + 0 + 0 + 8 + 0 + 2 + 1 = 203. C'est l'équivalent décimal du nombre binaire "11001011".</p>
+      <p>Finalement, nous obtenons que le nombre "175" se chiffre comme "203" avec la clef "100".</p>
+      <h4>Déchiffrement</h4>
+      <p>Afin de déchiffrer le message, vous devez faire la même opération XOR, mais maintenant entre la clef secrète et le message secret.</p>
+      <p>Si vous voulez savoir plus sur ce type de chiffrement, <a href="https://fr.wikipedia.org/wiki/XOR_(homonymie)">cliquez ici</a>.</p>
+    </div>
+    <footer>
+      <div class="mettre_en_ligne">
+        <div class="mettre_en_colonne">
+          <h3>Nos réseaux sociaux :</h3>
+          <div class="mettre_en_ligne">
+            <a href="https://www.instagram.com/" title = "Page Instagram CD"><img src="assets/images/icone_insta.png" width="60%"></a>
+            <a href="https://www.youtube.com/" title = "Page Youtube CD"><img src="assets/images/icone_youtube.png" width="60%"></a>
+            <a href="https://www.twitter.com/?hl=fr" title = "Page Twitter CD"><img src="assets/images/icone_twitter.png" width="60%"></a>
+            <a href="https://www.facebook.com/?hl=fr" title = "Page Facebook CD"><img src="assets/images/icone_facebook.png" width="60%"></a>
+          </div>
+        </div>
+        <div class="mettre_en_colonne">
+          <h3>Restons en contact :</h3>
+          <ul>+33-6-11-87-90-72</ul>
+          <ul>codage.decodage@outlook.com</ul>
+          <ul>166, Rue des fées, Paris 13e</ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
