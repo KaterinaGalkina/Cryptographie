@@ -1,29 +1,29 @@
-# Site pour les espions
+# Website for Spies
 
 ## Execution
 
-Pour pouvoir exécuter le projet, ouvrez le dossier contenant le code source dans Visual Studio Code. Si ce n'est pas encore fait, installez l'extension "Open in Browser" de TechER.
+To run the project, open the folder containing the source code in Visual Studio Code. If you haven’t already, install the "Open in Browser" extension by TechER.
 
-Une fois cela fait, double-cliquez sur le fichier "index.html" et sélectionnez "Open in Default Browser".
+Once that’s done, double-click on the "index.html" file and select "Open in Default Browser".
 
-Juste après, une fenêtre s'ouvrira dans votre navigateur avec la page d'accueil.
+A window will then open in your browser with the homepage.
 
-C'est un projet individuel réalisé en 2022.
+This is an individual project completed in 2022. *(Please note: the website is in French.)*
 
-## Concernant le site
+## About the Site
 
-Dès que vous accédez au site, vous atterrissez sur la page d'accueil où vous devrez saisir un mot de passe. Ce mot de passe est requis pour accéder à des informations hautement confidentielles destinées aux espions. Cependant, aujourd'hui, je vais faire une exception et le partager avec vous. Saisissez "G568GVGWHJ8" (ou simplement "Katia") dans le champ prévu à cet effet, puis appuyez sur "Valider".
+As soon as you access the site, you land on the homepage where you must enter a password. This password is required to access highly confidential information intended for spies. However, today I’ll make an exception and share it with you. Enter "G568GVGWHJ8" (or simply "Katia") in the designated field, then press "Validate".
 
-Une fois le mot de passe entré, vous serez dirigé vers la page de présentation. Là, vous trouverez des explications détaillées accompagnées de magnifiques illustrations dans le style "Among Us" expliquant la cryptographie et son utilité.
+Once the password is entered, you will be directed to the presentation page. There you’ll find detailed explanations accompanied by beautiful "Among Us" style illustrations explaining cryptography and its usefulness.
 
-En faisant défiler la page vers le bas, vous trouverez des moyens de rester en contact avec l'organisation. Les liens vers les réseaux sociaux sont cliquables, mais ils redirigent vers la page d'accueil de chaque réseau social, et les adresses ainsi que l'e-mail sont fictifs.
+Scrolling down the page, you’ll find ways to stay in contact with the organization. The social media links are clickable but redirect to each platform’s homepage, and the addresses and email are fictional.
 
-De plus, dès que vous descendez, vous pouvez remonter en haut de la page en cliquant sur un merveilleux bouton "En haut" qui s'illumine lorsque vous survolez votre souris au-dessous.
+Additionally, as you scroll down, you can quickly return to the top by clicking a wonderful "Back to Top" button that lights up when you hover your mouse over it.
 
-Dans le menu situé en haut, vous pouvez sélectionner la méthode de codage dont vous avez besoin. Pour chaque méthode, vous trouverez une section où vous pouvez coder et décoder un message à l'aide d'une clé de chiffrement. Une fois les deux champs remplis, tapez "chiffrer" ou "déchiffrer" selon vos besoins, et le message obtenu s'affichera dans le champ situé plus bas.
+In the menu at the top, you can select the coding method you need. For each method, you’ll find a section where you can encode and decode a message using an encryption key. Once both fields are filled, type "encrypt" or "decrypt" as needed, and the resulting message will appear in the field below.
 
-De plus, si vous souhaitez en savoir plus, vous pouvez faire défiler vers le bas et lire les explications sur la méthode de cryptage sélectionnée accompagnée d'un exemple de chiffrement.
+If you want to learn more, scroll down to read explanations about the selected encryption method along with a sample encryption.
 
-Enfin, si vous désirez obtenir encore plus d'informations, cliquez sur "cliquez ici" en bas de la page pour accéder à une page de Wikipedia qui vous fournira tous les détails, l'histoire, etc. de la méthode de chiffrement.
+Finally, if you want even more details, click on "click here" at the bottom of the page to access a Wikipedia page that provides full details, history, and more about the encryption method.
 
-Si vous avez sélectionné le codage ASCII, dont la présentation de la page est légèrement différente des autres, vous trouverez tout d'abord des informations sur l'histoire de ce codage, suivies des différentes sections où vous pouvez traduire votre message en fonction de la valeur dont il est écrit. En descendant plus bas, vous trouverez quelques informations sur la norme sélectionnée. Vous pouvez choisir la base dans laquelle votre message est écrit en haut de la page, puis vous serez redirigé vers la section correspondante où vous pourrez entrer votre nombre ou texte initial, choisir la base dans laquelle vous souhaitez le transformer, et la traduction apparaîtra dans le champ situé plus bas.
+If you selected ASCII coding, which has a slightly different page layout from the others, you will first find information about the history of this coding, followed by the various sections where you can translate your message depending on the value it’s written in. Scrolling further down, you’ll find some information about the selected standard. You can choose the base in which your message is written at the top of the page, then you’ll be redirected to the corresponding section where you can enter your number or initial text, choose the base you want to convert it to, and the translation will appear in the field below.
