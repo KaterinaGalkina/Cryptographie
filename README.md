@@ -8,7 +8,7 @@ Once that’s done, double-click on the "index.html" file and select "Open in De
 
 A window will then open in your browser with the homepage.
 
-This is an individual project completed in 2022. *(Please note: the website is in French.)*
+This is an individual project completed in 2022. *(<span style="color: magenta;">Please note: the website is in French.</span>)*
 
 ## About the Site
 
